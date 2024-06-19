@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="battleShip.css">
+    </head>
+    <body>
+        <h1><center>Battle Ship</center></h1>
+
+        <center>
+        <canvas id="firstBoard" width="550px" height="550px" style="border: 2px transparent solid;"></canvas>
+        <canvas id="secondBoard" width="550px" height="550px" style="border: 2px transparent solid"></canvas>
+        </center>
+
+        <script>
+            var c = document.getElementById("firstBoard");
+            var ctx = c.getContext("2d");
+            //to add the smaller squares
+            for (var i = 50; i <= 550; i += 50) {
+
+                //vertical lines
+                ctx.moveTo(i, 50);
+                ctx.lineTo(i,550);
+
+                //horizontal lines
+                ctx.moveTo(50,i);
+                ctx.lineTo(550,i);
+
+                ctx.stroke();
+            }
+            // Set ship properties
+            const ship1X = 100; // X-coordinate of the ship
+            const ship1Y = 150; // Y-coordinate of the ship
+            const ship1Width = 100; // Width of the ship
+            const ship1Height = 50; // Height of the ship
+
+            // Set ship properties
+            const ship2X = 300; // X-coordinate of the ship
+            const ship2Y = 450; // Y-coordinate of the ship
+            const ship2Width = 200; // Width of the ship
+            const ship2Height = 50; // Height of the ship
+
+            // Set ship properties
+            const ship3X = 50; // X-coordinate of the ship
+            const ship3Y = 50; // Y-coordinate of the ship
+            const ship3Width = 200; // Width of the ship
+            const ship3Height = 50; // Height of the ship
+
+            // Set ship properties
+            const ship4X = 50; // X-coordinate of the ship
+            const ship4Y = 200; // Y-coordinate of the ship
+            const ship4Width = 50; // Width of the ship
+            const ship4Height = 100; // Height of the ship
+
+            // Draw the ship
+            ctx.fillStyle = "blue"; // Ship color
+            ctx.fillRect(ship1X, ship1Y, ship1Width, ship1Height);
+            ctx.fillRect(ship2X, ship2Y, ship2Width, ship2Height);
+
+            ctx.fillRect(ship3X, ship3Y, ship3Width, ship3Height);
+            ctx.fillRect(ship4X, ship4Y, ship4Width, ship4Height);
+            
+            ctx.fillStyle = "black"; // Label color
+            ctx.font = "14px Arial"; // Label font
+            ctx.textAlign = "right"; // Align the numbers to the right
+            
+
+            for (var row = 1; row <= 10; row++) {
+                const y = row * 50 + 50; // Adjust the position for better alignment
+                ctx.fillText(row.toString(), 40, y-20);
+            }
+
+            
+            const myArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+            for (var col = 0; col < 10; col++) {
+                const x = (col+1) * 50 + 50; // Adjust the position for better alignment
+                ctx.fillText(myArray[col], x - 20, 40);
+            }
+
+        </script>
+
+        <script>
+            var c = document.getElementById("secondBoard");
+            var ctx = c.getContext("2d");
+            //to add the smaller squares
+            for (var i = 50; i <= 550; i += 50) {
+                //vertical lines
+                ctx.moveTo(i, 50);
+                ctx.lineTo(i,550);
+
+                //horizontal lines
+                ctx.moveTo(50,i);
+                ctx.lineTo(550,i);
+
+                ctx.stroke();
+            }
+
+            ctx.fillStyle = "black"; // Label color
+            ctx.font = "14px Arial"; // Label font
+            ctx.textAlign = "center"; // Align the numbers to the center
+            
+
+            for (var row = 1; row <= 10; row++) {
+                const y = row * 50 + 50; // Adjust the position for better alignment
+                ctx.fillText(row.toString(), 40, y-20);
+            }
+
+            
+            const myArray2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+            for (var col = 0; col < 10; col++) {
+                const x = (col+1) * 50 + 50; // Adjust the position for better alignment
+                ctx.fillText(myArray2[col], x - 25, 40);
+            }
+
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
