@@ -16,6 +16,7 @@
         <canvas id="secondBoard" width="550px" height="550px" style="border: 2px transparent solid"></canvas>
         </center>
 
+        <!-- board on the left -->
         <script>
             var c = document.getElementById("firstBoard");
             var ctx = c.getContext("2d");
@@ -56,13 +57,19 @@
             const ship4Width = 50; // Width of the ship
             const ship4Height = 100; // Height of the ship
 
+            // Set ship properties
+            const ship5X = 350; // X-coordinate of the ship
+            const ship5Y = 150; // Y-coordinate of the ship
+            const ship5Width = 50; // Width of the ship
+            const ship5Height = 250; // Height of the ship
+
             // Draw the ship
             ctx.fillStyle = "blue"; // Ship color
             ctx.fillRect(ship1X, ship1Y, ship1Width, ship1Height);
             ctx.fillRect(ship2X, ship2Y, ship2Width, ship2Height);
-
             ctx.fillRect(ship3X, ship3Y, ship3Width, ship3Height);
             ctx.fillRect(ship4X, ship4Y, ship4Width, ship4Height);
+            ctx.fillRect(ship5X, ship5Y, ship5Width, ship5Height);
             
             ctx.fillStyle = "black"; // Label color
             ctx.font = "14px Arial"; // Label font
@@ -84,6 +91,7 @@
 
         </script>
 
+        <!-- board on the right -->
         <script>
             var c = document.getElementById("secondBoard");
             var ctx = c.getContext("2d");
@@ -99,6 +107,30 @@
 
                 ctx.stroke();
             }
+
+            // Set ship properties
+            const ship6X = 350; // X-coordinate of the ship
+            const ship6Y = 100; // Y-coordinate of the ship
+            const ship6Width = 250; // Width of the ship
+            const ship6Height = 50; // Height of the ship
+
+            // Set ship properties
+            const ship7X = 250; // X-coordinate of the ship
+            const ship7Y = 300; // Y-coordinate of the ship
+            const ship7Width = 50; // Width of the ship
+            const ship7Height = 150; // Height of the ship
+
+            // Set ship properties
+            const ship8X = 50; // X-coordinate of the ship
+            const ship8Y = 100; // Y-coordinate of the ship
+            const ship8Width = 50; // Width of the ship
+            const ship8Height = 100; // Height of the ship
+
+            // Draw the ship
+            ctx.fillStyle = "red"; // Ship color
+            ctx.fillRect(ship6X, ship6Y, ship6Width, ship6Height);
+            ctx.fillRect(ship7X, ship7Y, ship7Width, ship7Height);
+            ctx.fillRect(ship8X, ship8Y, ship8Width, ship8Height);
 
             ctx.fillStyle = "black"; // Label color
             ctx.font = "14px Arial"; // Label font
