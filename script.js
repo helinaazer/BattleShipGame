@@ -634,15 +634,22 @@ document.addEventListener("mouseup", (event) => {
 
 // Start game button
 document.getElementById("startGame").addEventListener("click", () => {
-  gameStarted = true;
-  playerTurn = true;
-  playerHits = [];
-  playerMisses = [];
-  computerHits = [];
-  computerMisses = [];
-  placeComputerShips();
-  redraw(firstCtx, shipsFirstBoard);
-  redraw(secondCtx, shipsSecondBoard, true);
+  const allShipsPlaced = shipsFirstBoard.every((ship) => ship.placed);
+
+  if (allShipsPlaced) {
+    gameStarted = true;
+    playerTurn = true;
+    playerHits = [];
+    playerMisses = [];
+    computerHits = [];
+    computerMisses = [];
+    aiMemory = []; // Reset AI memory
+    placeComputerShips();
+    redraw(firstCtx, shipsFirstBoard);
+    redraw(secondCtx, shipsSecondBoard, true);
+  } else {
+    alert("Please place all your ships before starting the game.");
+  }
 });
 
 // Function to reset game state

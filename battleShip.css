@@ -19,17 +19,20 @@ body {
 
 canvas {
   border: 1px solid #000;
+  /* width: 450px;
+  height: 500px; */
 }
 
 button {
-  margin: 20px;
-  padding: 10px 10px;
-  font-size: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 p {
