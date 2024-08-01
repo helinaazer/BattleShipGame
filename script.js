@@ -1,8 +1,23 @@
 const firstBoard = document.getElementById("firstBoard");
 const firstCtx = firstBoard.getContext("2d");
+const heightRation = 0.75;
 
 const secondBoard = document.getElementById("secondBoard");
 const secondCtx = secondBoard.getContext("2d");
+
+function setCanvasHeight() {
+  firstBoard.height = firstBoard.width * heightRatio;
+  secondBoard.height = secondBoard.width * heightRatio;
+
+  redraw(firstCtx, shipsFirstBoard);
+  redraw(secondCtx, shipsSecondBoard, true);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setCanvasHeight();
+  redraw(firstCtx, shipsFirstBoard);
+  redraw(secondCtx, shipsSecondBoard, true);
+});
 
 // Define ship objects with initial positions below the boards
 let shipsFirstBoard = [
@@ -492,8 +507,6 @@ function getRandomTarget() {
   return { x, y };
 }
 
-
-
 secondBoard.addEventListener("click", (event) => {
   if (!gameStarted || !playerTurn) return;
 
@@ -729,7 +742,9 @@ function placeComputerShips() {
   });
 }
 
+// setCanvasHeight();
+// window.addEventListener("resize", setCanvasHeight);
+
 // Initial draw
 redraw(firstCtx, shipsFirstBoard);
 redraw(secondCtx, shipsSecondBoard, true); // Pass true to keep computer ships hidden
-
