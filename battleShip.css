@@ -1,5 +1,4 @@
 body {
-  
   flex-direction: column;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
@@ -24,11 +23,11 @@ canvas {
 }
 
 #canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; 
-    margin-bottom: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 10px;
 }
 
 button {

@@ -1,14 +1,14 @@
 const firstBoard = document.getElementById("firstBoard");
 const firstCtx = firstBoard.getContext("2d");
-const heightRation = 0.75;
+//const heightRatio = 1;
 
 const secondBoard = document.getElementById("secondBoard");
 const secondCtx = secondBoard.getContext("2d");
 
 function setCanvasHeight() {
+  const heightRatio = 1.2; // Example ratio for a taller board
   firstBoard.height = firstBoard.width * heightRatio;
   secondBoard.height = secondBoard.width * heightRatio;
-
   redraw(firstCtx, shipsFirstBoard);
   redraw(secondCtx, shipsSecondBoard, true);
 }
@@ -744,6 +744,12 @@ function placeComputerShips() {
 
 // setCanvasHeight();
 // window.addEventListener("resize", setCanvasHeight);
+
+window.addEventListener("resize", () => {
+  setCanvasHeight();
+  redraw(firstCtx, shipsFirstBoard);
+  redraw(secondCtx, shipsSecondBoard, true);
+});
 
 // Initial draw
 redraw(firstCtx, shipsFirstBoard);
